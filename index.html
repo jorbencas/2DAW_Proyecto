@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html ng-app="myApp" ng-app lang="en">
+	<head>
+		<title>Spectral by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+		
+		<!--JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
+        <script type="text/javascript" src="frontend/assets/js/skel.min.js"></script>
+        <script type="text/javascript" src="frontend/assets/js/skel-layers.min.js"></script>
+        <script type="text/javascript" src="frontend/assets/js/init.js"></script>
+        <script type="text/javascript" src="frontend/assets/js/arriba.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+		 <!--CSS -->
+		 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+		 <link rel="stylesheet" href="frontend/assets/css/main.css" />
+		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css" />	
+		
+	</head>
+	<body class="landing">
+		<div ng-include='"frontend/assets/includes/menu.view.html"'></div>
+        <div ng-view></div>
+        <div ng-include='"frontend/assets/includes/footer.view.html"'></div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-animate.min.js" ></script>
+
+        <script src="frontend/app.js"></script>
+        <script src="frontend/modules/ofertas/controller/ofertas.controller.js"></script>
+        <script src="frontend/modules/ofertas/services/ofertas_map.services.js"></script>
+        <script src="frontend/modules/contact/controller/contact.controller.js"></script>
+        <script src="frontend/modules/main/controller/main.controller.js"></script>     
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.1.2/ui-bootstrap-tpls.min.js"></script>
+        
+        <script src="frontend/apiconnector.js"></script>
+        <script src="frontend/common.service.js"></script>
+        
+       
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/min/dropzone.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.css" />
+
+        
+
+	</body>
+</html>

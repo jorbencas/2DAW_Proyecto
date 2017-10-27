@@ -1,0 +1,34 @@
+<!-- Main -->
+<!-- <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script> 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmTsTVRhRd9t0zfTIt6yE9Q1msEie7RG8" async defer></script> -->
+<section id="main" class="wrapper">
+    <div class="container">
+        <header class="major">
+            <h2>Ofertas</h2>
+            <p>Aquí puedes ver las ofertas disponibles en tu zona</p>
+        </header>
+
+        Filtrar Ofertas: <input type="text" class="filtre" ng-model="keywords" ><br>
+        <div class="image fit">
+           
+            <!-- Se escribe un mapa con la localizacion anterior-->
+            <div id="demo">{{demo}}</div>
+           
+            <div class="ofertas" > 
+                <div class="of"  ng-repeat="of in filteredOfertas| filter:filtro" id="{{of.id}}">
+                    <div ng-click="select(of.id)">
+                        <div><img src="{{of.picture}}" alt="" width="12%" height="12%"></div>
+                        <div class="desc">Nombre: {{of.name}}</div>
+                        <div class="fecha"> Fecha: {{of.date}}</div>
+                        <div class="hora"> Status: {{of.status}} % </div>
+                        <div class="precio"> Precio: {{of.price}} €</div>
+                        <div class="details" ><a href='#/ofertas/{{of.id}}'>Ver más</a></div>
+                    </div>
+                </div>
+                <div id="pager">
+                    <uib-pagination total-items="oferta.length" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-link-numbers="true" rotate="false"></uib-pagination>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

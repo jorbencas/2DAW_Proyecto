@@ -1,0 +1,57 @@
+<br><br>
+<script src="frontend/modules/contact/view/lib/bootstrap-button.js"></script>
+<div class="container">
+    <form id="contact_form" name="contact_form" class="form-contact">
+        <br>
+        <h2 class="form-contact-heading">Contacto</h2>
+
+        <div class="control-group">
+            <input required ng-model="contact.inputName" type="text" id="inputName" name="inputName" placeholder="Nombre" class="input-block-level" dir="auto" maxlength="100">
+            <span class="text-danger" ng-show="contact_form.inputName.$error.required && (contact_form.inputName.$dirty || contact_form.inputName.$touched)">El campo es obligatorio</span>
+        </div>
+        <div class="control-group">
+            <input required ng-model="contact.inputEmail" type="email" id="inputEmail" name="inputEmail" placeholder="Email *" class="input-block-level" maxlength="100" ng-pattern="/^[a-z0-9!#$%&'*+/=?^_`{|}~.-]+@[a-z0-9-]+(\.[a-z0-9-]+)*$/i">
+            <span class="text-danger" ng-show="contact_form.inputEmail.$error.required && (contact_form.inputEmail.$dirty || contact_form.inputEmail.$touched)">El campo es obligatorio</span>
+            <span class="text-danger" ng-show="contact_form.inputEmail.$error.email">Email no valido</span>
+        </div>
+        <div class="control-group">
+            <label class="cmbConsulta" for="sel1">Tema de Consulta</label>
+            <select ng-model="contact.inputSubject" class="form-control" id="inputSubject" name="inputSubject" title="Choose subject">
+                <option value="">- Por favor, seleccione un tema de consulta -</option>
+                <option value="actividad">Info relativa a alguna actividad</option>
+                <option value="dpto">Contacta con nuestro dpto de actividades</option>
+                <option value="trabaja">Trabaja con nosotros</option>
+                <option value="sugerencias">Haznos sugerencias</option>
+                <option value="reclamaciones">Atendemos tus reclamaciones</option>
+                <option value="novedades">Te avisamos de nuestras novedades</option>
+                <option value="diferente">Algo diferente</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <textarea required ng-model="contact.inputMessage" class="input-block-level" rows="4" id="inputMessage" name="inputMessage" placeholder="Introduzca aqui su mensaje *" style="max-width: 100%;" dir="auto"></textarea>
+            <span class="text-danger" ng-show="contact_form.inputMessage.$error.required && (contact_form.inputMessage.$dirty || contact_form.inputMessage.$touched)">El campo es obligatorio</span>
+        </div>
+
+        <input type="hidden" name="token" value="contact_form" />
+        
+        <input class="btn btn-primary" type="submit" name="submit" id="submitBtn" value="Enviar" 
+               ng-show="contact_form.inputName.$valid && contact_form.inputEmail.$valid && contact_form.inputMessage.$valid" 
+               ng-click="SubmitContact()"/>
+        
+        <div id="resultMessage" ng-class="class">{{message}}</div>
+    </form>
+</div> <!-- /container -->
+<div class="container">
+    <section class="contacto">
+        <div class="6u 12u(3)">
+            <br>
+            <h4>O bien puedes ponerte en contacto con nosotros mediante: </h4>
+            <br>
+            <ul class="icons">
+                <li><a href="https://mail.google.com/"><img src="frontend/assets/media/gmail.png" class="gmail"></a><span class="correogmail">joinelderly@gmail.com</span></li>
+                <li><a href="https://twitter.com/JoinElderly" class="icon rounded fa-twitter"><span class="label">Twitter</span></a><span class="redsocial">@JoinElderly</span></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100010986072513" class="icon rounded fa-facebook"><span class="label">Facebook</span></a><span class="redsocial">facebook.com/JoinElderly</span></li>
+            </ul>
+        </div>
+    </section>
+</div>

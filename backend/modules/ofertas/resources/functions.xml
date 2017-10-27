@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<functions>
+    <function>
+        <name>maploader</name>
+        <uri>maploader</uri>
+    </function>
+    <function>
+        <name>getOffer</name>
+        <uri>getOffer</uri>
+    </function>
+     <function>
+        <name>join</name>
+        <uri>join</uri>
+    </function>
+</functions>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+    <module>
+        <name>ofertas</name>
+        <uri>ofertas</uri>
+    </module>
+    <module>
+        <name>contact</name>
+        <uri>contact</uri>
+    </module>
+    <module>
+        <name>user</name>
+        <uri>user</uri>
+    </module>
+</modules>
