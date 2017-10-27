@@ -32,7 +32,7 @@ class controller_ofertas {
     function getOffer() {
         set_error_handler('ErrorHandler');
         try {
-            $arrValue = loadModel(MODEL_OFERTAS, "ofertas_model", "select", array('column' => array('id'), 'like' => array($_GET['param']), 'field' => array('*')));
+            $arrValue = loadModel(MODEL_OFERTAS, "ofertas_model", "select", array('column' => array('idProduct'), 'like' => array($_GET['param']), 'field' => array('*')));
         } catch (Exception $e) {
             $arrValue = false;
         }

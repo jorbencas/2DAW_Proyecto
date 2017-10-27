@@ -80,31 +80,31 @@ class ofertas_dao {
         return $db->listar($stmt);
     }
 
-    // public function update_DAO($db, $arrArgument) {
-    //     /*
-    //      * @param= $arrArgument( column => array(colum),
-    //      *                          like => array(like),
-    //      *                          field => array(field),
-    //      *                          new => array(new)
-    //      *                      );
-    //      */
-    //     $i = count($arrArgument['field']);
-    //     $k = count($arrArgument['column']);
+    public function update_DAO($db, $arrArgument) {
+        /*
+         * @param= $arrArgument( column => array(colum),
+         *                          like => array(like),
+         *                          field => array(field),
+         *                          new => array(new)
+         *                      );
+         */
+        $i = count($arrArgument['field']);
+        $k = count($arrArgument['column']);
 
-    //     $sql1 = "UPDATE computer SET ";
-    //     $sql2 = "  WHERE ";
+        $sql1 = "UPDATE computer SET ";
+        $sql2 = "  WHERE ";
 
-    //     for ($j = 0; $j < $i; $j++) {
-    //         if ($i > 1 && $j != 0)
-    //             $change.=", ";
-    //         $change .= $arrArgument['field'][$j] . "='" . $arrArgument['new'][$j] . "'";
-    //     }
-    //     for ($l = 0; $l < $k; $l++) {
-    //         if ($k > 1 && $l != 0)
-    //             $sql.=" AND ";
-    //         $sql .= $arrArgument['column'][$l] . " like '" . $arrArgument['like'][$l] . "'";
-    //     }
-    //     $sql = $sql1 . $change . $sql2 . $sql;
-    //     return $db->ejecutar($sql);
-    // }
+        for ($j = 0; $j < $i; $j++) {
+            if ($i > 1 && $j != 0)
+                $change.=", ";
+            $change .= $arrArgument['field'][$j] . "='" . $arrArgument['new'][$j] . "'";
+        }
+        for ($l = 0; $l < $k; $l++) {
+            if ($k > 1 && $l != 0)
+                $sql.=" AND ";
+            $sql .= $arrArgument['column'][$l] . " like '" . $arrArgument['like'][$l] . "'";
+        }
+        $sql = $sql1 . $change . $sql2 . $sql;
+        return $db->ejecutar($sql);
+    }
 }

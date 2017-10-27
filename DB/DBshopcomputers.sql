@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `computer` (
 --
 
 INSERT INTO `computer` (`idProduct`, `name`, `type`, `price`, `status`, `latitude`, `longitude`, `date`, `marca`, `picture`, `description`, `location`) VALUES
-( 1, 'GeForce GTX 1060 G1', 'Targueta grafica', '325€', '100%', '38.8294939', '-0.6182766,13', '12/12/2016', 'Gigabyte', '', 'Core
+( 1, 'GeForce GTX 1060 G1', 'Targueta grafica', '325€', '100%', '38.8294939', '-0.6182766,13', '12/12/2016', 'Gigabyte', 'https://img.pccomponentes.com/articles/10/102344/gigabyte-geforce-gtx-1060-g1-gaming-6gb-gddr5.jpg', 'Core
 Clock   Boost: 1847 MHz/ Base: 1620 MHz in OC Mode
 Boost: 1809 MHz/ Base: 1594 MHz in Gaming Mode
 Memory Clock    8008 MHz
