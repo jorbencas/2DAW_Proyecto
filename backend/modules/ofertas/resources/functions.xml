@@ -9,7 +9,7 @@
         <uri>getOffer</uri>
     </function>
      <function>
-        <name>join</name>
-        <uri>join</uri>
+        <name>getCategory</name>
+        <uri>getCategory</uri>
     </function>
 </functions>

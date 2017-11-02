@@ -28,4 +28,7 @@ class ofertas_model {
     public function select($arrArgument) {
         return $this->bll->select_BLL($arrArgument);
     }
+    public function selectCategory($arrArgument) {
+        return $this->bll->selectCategory_BLL($arrArgument);
+    }
 }

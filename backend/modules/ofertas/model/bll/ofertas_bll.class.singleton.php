@@ -30,4 +30,8 @@ class ofertas_bll {
     public function select_BLL($arrArgument) {
         return $this->dao->select_DAO($this->db, $arrArgument);
     }
+
+    public function selectCategory_BLL($arrArgument) {
+        return $this->dao->selectCategory_DAO($this->db, $arrArgument);
+    }
 }

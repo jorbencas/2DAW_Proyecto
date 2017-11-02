@@ -48,6 +48,8 @@
 		-webkit-text-size-adjust: none;
 	}
 
+
+
 /* Box Model */
 
 	*, *:before, *:after {
@@ -2379,13 +2381,20 @@
 	}
 
 		.features li {
-			padding: 4em 4em 2em 6em ;
+			padding: 1em 1em 1em 2em ;
 			display: block;
 			position: relative;
 			text-align: left;
-			width: 50%;
+			width: 25%;
 		}
 
+		.features li:hover {
+			border: 1.5px solid white;
+		}
+		
+		li p{
+			color:white;
+		}
 			.features li:nth-child(1) {
 				background-color: rgba(0, 0, 0, 0.035);
 			}
@@ -2424,6 +2433,12 @@
 
 			.features li:nth-child(10) {
 				background-color: rgba(0, 0, 0, 0.35);
+			}
+			.features li:nth-child(11) {
+				background-color: rgba(0, 0, 0, 0.38);
+			}
+			.features li:nth-child(12) {
+				background-color: rgba(0, 0, 0, 0.415);
 			}
 
 			.features li:before {

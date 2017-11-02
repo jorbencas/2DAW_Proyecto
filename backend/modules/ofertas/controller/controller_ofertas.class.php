@@ -49,6 +49,26 @@ class controller_ofertas {
             echo json_encode($arrArguments);
         }
     }
+    function getCategory() {
+        set_error_handler('ErrorHandler');
+        try {
+            $arrValue = loadModel(MODEL_OFERTAS, "ofertas_model", "selectCategory", array('column' => array('type'), 'like' => array($_GET['param']), 'field' => array('*')));
+        } catch (Exception $e) {
+            $arrValue = false;
+        }
+        restore_error_handler();
+
+        if ($arrValue) {
+            $arrArguments['ofertas'] = $arrValue;
+            $arrArguments['success'] = true;
+            echo json_encode($arrArguments);
+        } else {
+
+            $arrArguments['success'] = false;
+            $arrArguments['error'] = 503;
+            echo json_encode($arrArguments);
+        }
+    }
 
     // function join() {
     //     set_error_handler('ErrorHandler');

@@ -1,5 +1,4 @@
 app.controller('contactCtrl', function ($scope, services) {
-   console.log($scope);
     $scope.contact = {
         inputName: "",
         inputEmail: "",

@@ -56,7 +56,7 @@ class ofertas_dao {
         $k = count($arrArgument['field']);
         $sql1 = "SELECT ";
         $sql2 = " FROM computer WHERE ";
-      
+
         if ($arrArgument['column'][0] != 'false')
             for ($j = 0; $j < $i; $j++) {
                 if ($i > 1 && $j != 0)
@@ -79,6 +79,34 @@ class ofertas_dao {
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
     }
+
+    public function selectCategory_DAO($db, $arrArgument) {
+        $i = count($arrArgument['column']);
+        $k = count($arrArgument['field']);
+        $sql1 = "SELECT ";
+        $sql2 = " FROM computer WHERE ";
+
+        if ($arrArgument['column'][0] != 'false')
+            for ($j = 0; $j < $i; $j++) {
+                if ($i > 1 && $j != 0)
+                    $sql.=" AND ";
+                $sql .= $arrArgument['column'][$j] . " like '" . $arrArgument['like'][$j] . "'";
+            }
+        for ($l = 0; $l < $k; $l++) {
+            if ($l > 1 && $k != 0)
+                $fields.=", ";
+            $fields .= $arrArgument['field'][$l];
+        }
+        
+        if ($arrArgument['column'][0] != 'false')
+            $sql = $sql1 . $fields . $sql2 . $sql;
+        else
+            $sql = $sql1 . $fields . ' FROM computer';
+
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt);
+    }
+    
 
     public function update_DAO($db, $arrArgument) {
         /*

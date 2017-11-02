@@ -1,55 +1,35 @@
-app.controller('ofertasCtrl', function ($scope, ofertas, $http) {
+app.controller('ofertasCtrl', function ($scope, ofertas) {
+    console.log(ofertas.ofertas);
     $scope.filteredOfertas = [];
-    $scope.markers = [];
     $scope.oferta = ofertas.ofertas;
-    $scope.numPerPage = 6;
+    $scope.numPerPage = 3;
     $scope.maxSize = 5;
     $scope.currentPage = 1;
 
     $scope.$watch('currentPage + numPerPage', update);
-
     
 
     function update() {
         var begin = (($scope.currentPage - 1) * $scope.numPerPage), end = begin + $scope.numPerPage;
+        console.log($scope.oferta.slice(begin, end));
+       //$scope.filteredOfertas = $scope.oferta;
         $scope.filteredOfertas = $scope.oferta.slice(begin, end);
-    };
+    }
 
-    $scope.search = function() {
-		$http.post('search.php', { "data" : $scope.keywords})
-		.success(function(data, status) {
-    			$scope.status = status;
-    			$scope.data = data;
-    			$scope.result = data; // Show result from server in our <pre></pre> element
-    		})
-		.error(function(data, status) {
-			$scope.data = data || "Request failed";
-			$scope.status = status;			
-		});
-    };
+    
+      
+    //   $scope.$watch('currentPage + numPerPage', function() {
+    //     var begin = (($scope.currentPage - 1) * $scope.numPerPage)
+    //     , end = begin + $scope.numPerPage;
+        
+    //     $scope.filteredTodos = $scope.todos.slice(begin, end);
+    //   });
 
 });
 
-app.controller('detailsCtrl', function ($scope, data, ofertas_map) {
+app.controller('detailsCtrl', function ($scope, data) {
     console.log(data);
     $scope.data = data.ofertas;
-
-    // ofertas_map.cargarmap(ofertas.ofertas, $scope);
-    
-    //     $scope.select = function (id) {
-    //         for (var i = 0; i < $scope.markers.length; i++) {
-    //             var marker = $scope.markers[i];
-    //             if (id == marker.get('id')) {
-    //                 if (marker.getAnimation() !== null) {
-    //                     marker.setAnimation(null);
-    //                 } else {
-    //                     marker.setAnimation(google.maps.Animation.BOUNCE);
-    //                     $scope.map.setCenter(marker.latlon);
-    //                 }
-    //                 break;
-    //             }
-    //         }
-    //     };
 
     // $scope.stringAsistentes = $scope.data.asistentes;
     // $scope.data.asistentes = $scope.stringAsistentes.split("-");
