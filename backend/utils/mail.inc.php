@@ -10,7 +10,7 @@ function enviar_email($arr) {
     switch ($arr['type']) {
         case 'alta':
             $subject = 'Tu Alta en JoinElderly';
-            $ruta = "<a href='http://".$_SERVER['HTTP_HOST']."/4_AngularJS/3_proj_final_AngularJS/JoinElderly/#/user/activar/" . $arr['token'] . "'>aqu&iacute;</a>";
+            $ruta = "<a href='http://".$_SERVER['HTTP_HOST']."/2DAW_Proyecto/#/user/activar/" . $arr['token'] . "'>aqu&iacute;</a>";
             $body = 'Gracias por unirte a nuestra aplicaci&oacute;n. Para finalizar el registro, pulsa ' . $ruta;
             break;
 
@@ -94,7 +94,7 @@ function enviar_email($arr) {
         $mail = email::getInstance();
         $mail->name = $arr['inputName'];
         if ($arr['type'] === 'admin')
-            $mail->address = 'ruralshoponti@gmail.com';
+            $mail->address = 'computersshop2daw@gmail.com ';
         else
             $mail->address = $arr['inputEmail'];
         $mail->subject = $subject;

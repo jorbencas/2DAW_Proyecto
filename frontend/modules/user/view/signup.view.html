@@ -1,0 +1,108 @@
+<br /> <br />
+
+<div class="container">
+    <form id="signup_form" name="signup_form" class="form-contact">
+        <br />
+        <div class="form-title"><h2 class="form-contact-heading">Registro</h2></div>
+        <div class="form-row">
+            <div class="control-group">
+                <p>Usuario: <input required ng-model="signup.inputUser" type="text" id="inputUser" name="inputUser" ng-pattern="/^.{4,20}$/"
+                placeholder="Usuario" class="input-block-level" dir="auto" maxlength="100" ng-change="change_signup()">
+                <span class="text-danger" 
+                ng-show="signup_form.inputUser.$error.required && (signup_form.inputUser.$dirty || signup_form.inputUser.$touched)">El campo es obligatorio</span>
+                <span class="text-danger" ng-show="signup_form.inputUser.$error.pattern">Usuario no válido</span><br />
+                <span class="text-danger" ng-show="AlertMessage" ng-model="signup.user_error">{{signup.user_error}}</span>
+                </p>
+            </div>
+                                
+            <div class="control-group">
+                <p>Email: <input required ng-model="signup.inputEmail" type="email" id="inputEmail" name="inputEmail" 
+                placeholder="Email" class="input-block-level" maxlength="100" 
+                ng-pattern="/^[a-z0-9!#$%&'*+/=?^_`{|}~.-]+@[a-z0-9-]+(\.[a-z0-9-]+)*$/i" ng-change="change_signup()">
+                <span class="text-danger" ng-show="signup_form.inputEmail.$error.required && (signup_form.inputEmail.$dirty || signup_form.inputEmail.$touched)">El campo es obligatorio</span>
+                <span class="text-danger" ng-show="signup_form.inputEmail.$error.email">Email no valido</span>
+                <span class="text-danger" ng-show="AlertMessage" ng-model="signup.email_error">{{signup.email_error}}</span>
+                </p>
+            </div>
+        </div>
+        <!-- <div class="form-row">
+            <div class="control-group">
+                <p>Nombre: <input required ng-model="signup.inputName" type="text" id="inputName" name="inputName" 
+                ng-pattern="/^\D{3,30}$/" placeholder="Nombre" class="input-block-level" dir="auto" maxlength="100" ng-change="change_signup()">
+                <span class="text-danger" ng-show="signup_form.inputName.$error.required && (signup_form.inputName.$dirty || signup_form.inputName.$touched)">El campo es obligatorio</span>
+                <span class="text-danger" ng-show="signup_form.inputName.$error.pattern">Nombre no válido</span><br />
+                <span class="text-danger" ng-show="AlertMessage" ng-model="signup.nombre_error">{{signup.nombre_error}}</span>
+                </p>
+            </div>
+            <div class="control-group">
+                <p>Apellidos: <input required ng-model="signup.inputSurn" type="text" id="inputSurn" name="inputSurn" ng-pattern="/^\D{4,120}$/"
+                placeholder="Apellidos" class="input-block-level" dir="auto" maxlength="100" ng-change="change_signup()">
+                <span class="text-danger" ng-show="signup_form.inputSurn.$error.required && (signup_form.inputSurn.$dirty || signup_form.inputSurn.$touched)">El campo es obligatorio</span>
+                <span class="text-danger" ng-show="signup_form.inputSurn.$error.pattern">Apellidos no válidos</span><br />
+                <span class="text-danger" ng-show="AlertMessage" ng-model="signup.surn_error">{{signup.surn_error}}</span>
+                </p>
+            </div>
+        </div> -->
+        <div class="form-row">
+            <div class="control-group">
+                <p>Contraseña: <input required ng-model="signup.inputPass" type="password" id="inputPass" name="inputPass" ng-pattern="/^.{4,6}$/"
+                placeholder="Contraseña" class="input-block-level" dir="auto" maxlength="100" ng-change="change_signup()">
+                <span class="text-danger" ng-show="signup_form.inputPass.$error.required && (signup_form.inputPass.$dirty || signup_form.inputPass.$touched)">El campo es obligatorio</span>
+                <span class="text-danger" ng-show="signup_form.inputPass.$error.pattern">Passwd no válido</span><br />
+                <span class="text-danger" ng-show="AlertMessage" ng-model="signup.pass_error">{{signup.pass_error}}</span>
+                </p>
+            </div>
+            <div class="control-group">
+                <p>Repita la contraseña: <input required ng-model="signup.inputPass2" type="password" id="inputPass2" name="inputPass2" 
+                placeholder="Contraseña" class="input-block-level" dir="auto" maxlength="100" ng-change="change_signup()"/>
+                <span class="text-danger" ng-show="signup_form.inputPass2.$error.required && (signup_form.inputPass2.$dirty || signup_form.inputPass2.$touched)">El campo es obligatorio</span>
+                <span class="text-danger" data-ng-show="signup.inputPass !== signup.inputPass2"> Password do not match</span>
+                </p>
+            </div>
+        </div>
+                            
+        <!-- <div class="form-row">
+            <div class='control-group'>
+                <p>Fecha de Nacimiento: <input calendar required ng-model="signup.inputBirth" type="text" id="inputBirth" name="inputBirth" ng-pattern="/\d{2}.\d{2}.\d{4}$/"
+                class="form-control" dir="auto" maxlength="100" ng-change="change_signup()"/>
+                <span class="text-danger" ng-show="signup_form.inputBirth.$error.required && (signup_form.inputBirth.$dirty || signup_form.inputBirth.$touched)">El campo es obligatorio</span>
+                <span class="text-danger" ng-show="signup_form.inputBirth.$error.pattern">FNac no válida</span><br />
+                <span class="text-danger" ng-show="AlertMessage" ng-model="signup.birth_error">{{signup.birth_error}}</span>
+                </p>
+            </div>
+            <div class="control-group">
+                <p>Tipo de usuario: 
+                    <select class="form-control" ng-model="signup.inputType" id="inputType" name="inputType">
+                        <option value="client">Cliente</option>
+                        <option value="worker">Ofertante</option>
+                    </select></p>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="control-group">
+                <p>Nº cuenta bancaria: <input required ng-model="signup.inputBank" type="text" id="inputBank" name="inputBank" ng-pattern="/^.{4,20}$/"
+                class="input-block-level" dir="auto" maxlength="100" ng-change="change_signup()">
+                <span class="text-danger" ng-show="signup_form.inputBank.$error.required && (signup_form.inputBank.$dirty || signup_form.inputBank.$touched)">El campo es obligatorio</span>
+                <span class="text-danger" ng-show="signup_form.inputBank.$error.pattern">Bank no válido</span><br />
+                <span class="text-danger" ng-show="AlertMessage" ng-model="signup.bank_error">{{signup.bank_error}}</span>
+                </p>
+            </div>
+            <div class="control-group">
+                <p>DNI: <input required ng-model="signup.inputDni" type="text" id="inputDni" name="inputDni" 
+                placeholder="DNI" class="input-block-level" dir="auto" maxlength="100" ng-change="change_signup()">
+                <span class="text-danger" ng-show="signup_form.inputDni.$error.required && (signup_form.inputDni.$dirty || signup_form.inputDni.$touched)">El campo es obligatorio</span>
+                <span class="text-danger" ng-show="AlertMessage" ng-model="signup.dni_error">{{signup.dni_error}}</span>
+                </p>
+            </div>
+            <input type="hidden" name="token" value="signup_form" />
+        </div> -->
+        <div class="form-row">
+            <div>
+                <br />
+                <input class="btn btn-primary" type="button" name="submit" id="submitBtn"  value="Enviar" 
+                       ng-show="signup_form.inputUser.$valid && signup_form.inputEmail.$valid  && signup_form.inputPass.$valid && signup_form.inputPass2.$valid  && signup.inputPass === signup.inputPass2" ng-click="SubmitSignUp()"/>
+            </div>
+        </div>
+        <div id="resultMessage"></div>
+    </form>
+</div> <!-- /container -->

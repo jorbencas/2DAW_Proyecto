@@ -91,13 +91,13 @@ class email {
     
     public function send_mailgun($email, $subject, $body){
         	$config = array();
-        	$config['api_key'] = "key-0d32063a19d690be82da3bfeb69a9e3b"; //API Key
-        	$config['api_url'] = "https://api.mailgun.net/v2/sandbox1811da627e3e450ebabe2e836ed20a3a.mailgun.org/messages"; //API Base URL
+        	$config['api_key'] = "key-2978dfe0641b30e49e36c410620bcd69"; //API Key
+        	$config['api_url'] = "https://api.mailgun.net/v3/sandbox1426785df9d4414987805b573571a829.mailgun.org/messages"; //API Base URL
     
         	$message = array();
-        	$message['from'] = "ruralshoponti@gmail.com";
+        	$message['from'] = "computersshop2daw@gmail.com ";
         	$message['to'] = $email;
-        	$message['h:Reply-To'] = "ruralshoponti@gmail.com";
+        	$message['h:Reply-To'] = "computersshop2daw@gmail.com ";
         	$message['subject'] = $subject;
         	$message['html'] = $body;
          

@@ -44,7 +44,7 @@ class controller_contact {
                 'type' => 'admin',
                 'token' => '',
                 'inputName' => $_POST['inputName'],
-                'inputEmail' => "joinelderly@gmail.com",
+                'inputEmail' => "segui.guerola@gmail.com",
                 'inputSubject' => $_POST['inputSubject'],
                 'inputMessage' => $_POST['inputMessage']
             );

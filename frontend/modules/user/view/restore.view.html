@@ -1,0 +1,20 @@
+<div class="container">
+    <form id="restore_form" name="restore_form" class="form-contact">
+        <br />
+        <div class="form-title"><h2 class="form-contact-heading">¿Has olvidado la contraseña?</h2></div>
+        <p>Por favor introduce tu email. En breve recibirás un correo con un enlace para cambiar tu contraseña.</p>
+
+        <div class="control-group">
+            <input required ng-model="restore.inputEmail" type="email" id="inputEmail" name="inputEmail" placeholder="Email" class="input-block-level" maxlength="100" ng-pattern="/^[a-z0-9!#$%&'*+/=?^_`{|}~.-]+@[a-z0-9-]+(\.[a-z0-9-]+)*$/i">
+            <span class="text-danger" ng-show="restore_form.inputEmail.$error.required && (restore_form.inputEmail.$dirty || restore_form.inputEmail.$touched)">El campo es obligatorio</span>
+            <span class="text-danger" ng-show="restore_form.inputEmail.$error.email">Email no valido</span>
+        </div>
+        
+        <input type="hidden" name="token" value="restore_form" />
+        
+        <input class="btn btn-primary" type="submit" name="submit" id="restoreBtn" value="Enviar" ng-show="restore_form.inputEmail.$valid" ng-click="SubmitRestore()"/>
+
+        <div id="resultMessage" ng-class="class">{{message}}</div>
+    </form>
+</div> <!-- /container -->
+

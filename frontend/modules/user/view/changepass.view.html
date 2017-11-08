@@ -1,0 +1,23 @@
+<br>
+<div class="container">
+    <form id="changepass_form" name="changepass_form" class="form-contact">
+        <br />
+        <div class="form-title"><h2 class="form-contact-heading">Cambia tu contraseña</h2></div>
+        <p>Por favor introduce tu nueva contraseña.</p>
+
+        <div class="control-group">
+            <input required ng-model="changepass.inputPassword" type="password" id="inputPassword" name="inputPassword" placeholder="Password" class="input-block-level" maxlength="100">
+            <span class="text-danger" ng-show="changepass_form.inputPassword.$error.required && (changepass_form.inputPassword.$dirty || changepass_form.inputPassword.$touched)">El campo es obligatorio</span>
+        </div>
+        <div class="control-group">
+            <input required ng-model="changepass.inputPassword2" type="password" id="inputPassword2" name="inputPassword2" placeholder="Repite tu Password" class="input-block-level" maxlength="100">
+            <span class="text-danger" ng-show="changepass_form.inputPassword2.$error.required && (changepass_form.inputPassword2.$dirty || changepass_form.inputPassword2.$touched)">El campo es obligatorio</span>
+        </div>
+        
+        <input class="btn btn-primary" type="button" name="submit" id="changeBtn" value="Enviar" 
+               ng-show="changepass_form.inputPassword.$valid && changepass_form.inputPassword2.$valid && changepass.inputPassword === changepass.inputPassword2" ng-click="SubmitChangePass()"/>
+
+        <div id="resultMessage"></div>
+    </form>
+</div> <!-- /container -->
+

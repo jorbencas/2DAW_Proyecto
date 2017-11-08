@@ -10,6 +10,10 @@
                     <a href="#contact" class="menuToggle"><span>Contact</span></a>
                     <a href="#menu" class="menuToggle"><span>Home</span></a>
                     <a href="#ofertas" class="menuToggle"><span>Ofertas</span></a>
+                    <!-- LogProf -->
+                        <a id="acceder" ng-show="accederV" href="#/" class="button special" ng-click="open()"  >Acceder</a>
+                        <a id='profile' ng-show="profileV" href='#/user/profile'><img ng-show="profileV" id='menuImg' class='icon rounded' src='{{avatar}}'/>{{nombre}}</a>
+                        <a id='logout' ng-show="logoutV" ng-click='logout()' >Log Out</a>
             </nav>
         </header>
     </div> 

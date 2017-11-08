@@ -1,34 +1,34 @@
 app.factory("ofertas_map", ['$rootScope',
 function ($rootScope) {
+    
     var service = {};
     service.cargarmap = cargarmap;
     service.marcar = marcar;
     return service;
 
     function cargarmap(arrArguments, $rootScope) {
+        console.log(arrArguments);
         navigator.geolocation.getCurrentPosition(showPosition, showError);
         
         function showPosition(position){
-            lat = position.coords.latitude;
-            lon = position.coords.longitude;
+            lat = arrArguments.latitude;
+            lon = arrArguments.longitude;
             latlon = new google.maps.LatLng(lat, lon);
             mapholder = document.getElementById('mapholder');
             //mapholder.style.height = '550px';
             //mapholder.style.width = '900px';
             
             var myOptions = {
-                center: latlon, zoom: 10,
+                center: latlon, zoom: 14,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 mapTypeControl: false,
                 navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL}
             };
             var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
-            // var marker = new google.maps.Marker({position: latlon, map: map, title: "You are here!"});
-            
+            var marker = new google.maps.Marker({position: latlon, map: map, title: "You are here!"});
             $rootScope.map = map;
-            for (var i = 0; i < arrArguments.length; i++) {
-                marcar(map, arrArguments[i], $rootScope);
-            }
+                marcar(map, arrArguments, $rootScope);
+            
         }
         
         function showError(error){
@@ -50,6 +50,7 @@ function ($rootScope) {
     }
     
     function marcar(map, oferta, $rootScope) {
+        console.log(oferta);
         var latlon = new google.maps.LatLng(oferta.latitud, oferta.longitud);
         var marker = new google.maps.Marker({position: latlon, map: map, title: oferta.descripcion, animation: null});
     

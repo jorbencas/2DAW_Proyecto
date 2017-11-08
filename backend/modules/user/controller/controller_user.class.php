@@ -22,24 +22,26 @@ class controller_user {
     public function signup_user() {
         $jsondata = array();
         $userJSON = $_POST;
+
         $result = validate_userPHP($userJSON);
+        
+
         
         if ($result['resultado']) {
             $avatar = get_gravatar($result['email'], $s = 400, $d = 'identicon', $r = 'g', $img = false, $atts = array());
             $arrArgument = array(
                 'usuario' => $result['datos']['usuario'],
-                'nombre' => $result['datos']['nombre'],
-                'apellidos' => $result['datos']['apellidos'],
+                // 'nombre' => $result['datos']['nombre'],
+                // 'apellidos' => $result['datos']['apellidos'],
                 'email' => $result['datos']['email'],
                 'password' => password_hash($result['datos']['password'], PASSWORD_BCRYPT),
-                'date_birthday' => strtoupper($result['datos']['date_birthday']),
-                'tipo' => $result['datos']['tipo'],
-                'bank' => $result['datos']['bank'],
-                'avatar' => $avatar,
-                'dni' => $result['datos']['dni'],
+                // 'date_birthday' => strtoupper($result['datos']['date_birthday']),
+                // 'tipo' => $result['datos']['tipo'],
+                // 'bank' => $result['datos']['bank'],
+                 'avatar' => $avatar,
+                // 'dni' => $result['datos']['dni'],
                 'token' => ""
             );
-
             //////////////////////// repe user or email /////////////////
             set_error_handler('ErrorHandler');
             try {

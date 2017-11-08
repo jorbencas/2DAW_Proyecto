@@ -3827,3 +3827,31 @@
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
+
+	.tarjeta{
+		margin: .5%;
+		float: left;
+		padding-top: 5px;
+		background-color: #505393;
+		height: 160px;
+		width: 49%;
+	}
+	.imagen{
+		margin: 5px;
+		margin-top: 0px;
+		height: 150px;
+		width: 150px;
+		float: left;
+	}
+
+	.nombre{
+		font-size: 20px;
+		padding: 5px;
+		margin-left: 10px;
+		background-color: #3a3c6a;
+		float: left;
+	}
+
+	#pager{
+		padding-right: 80%;
+	}

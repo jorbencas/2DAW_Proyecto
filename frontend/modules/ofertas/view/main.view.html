@@ -11,21 +11,27 @@
         Filtrar Ofertas: <input type="text" class="filtre" ng-model="filtro"><br>
         <div class="image fit"> 
             <!-- Se escribe un mapa con la localizacion anterior-->
-            <div id="demo">{{demo}}</div>
+           
            
             <div class="ofertas" > 
                 <div class="of"  ng-repeat="of in filteredOfertas| filter:filtro" id="{{of.id}}">
+                        <div class="tarjeta">
                     <div ng-click="select(of.id)">
-                        <div><img src="{{of.picture}}" alt="" width="12%" height="12%"></div>
-                        <div class="desc">Nombre: {{of.name}}</div>
+                        
+                        <div class="imagen"><img src="{{of.picture}}" alt=""></div>
+                        <div class="nombre">{{of.name}}</div>
                         <div class="fecha"> Fecha: {{of.date}}</div>
                         <div class="hora"> Status: {{of.status}} % </div>
                         <div class="precio"> Precio: {{of.price}} €</div>
                         <div class="details" ><a href='#/ofertas/{{of.idProduct}}'>Ver más</a></div>
                     </div>
+                    </div>
                 </div>
                 <div id="pager">
-                    <uib-pagination total-items="oferta.length" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-link-numbers="true" rotate="false"></uib-pagination>
+                        <uib-pagination class="pagination-sm" total-items="oferta.length" ng-model="currentPage"
+                        ng-change="pageChanged()" previous-text="&lsaquo;" next-text="&rsaquo;" items-per-page=3></uib-pagination>
+                
+                    <!-- <uib-pagination total-items="oferta.length" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-link-numbers="true" rotate="false"></uib-pagination> -->
                 </div>
             </div>
         </div>
