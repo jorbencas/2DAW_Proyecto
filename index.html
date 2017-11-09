@@ -28,12 +28,15 @@
          <link rel="stylesheet" href="frontend/assets/css/main.css" />
          <link href="frontend/modules/ofertas/view/css/main.css" rel="stylesheet"/>
          <link rel="stylesheet" href="frontend/modules/user/view/css/main.css" type="text/css"/>
-		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css" />	
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css" />	
+         <link href="frontend/modules/admin/view/css/main.css" rel="stylesheet"/>
+         <link href="frontend/modules/cookies/view/css/cookies.css" rel="stylesheet" type="text/css">
 		
 	</head>
 	<body class="landing">
 		<div ng-include='"frontend/assets/includes/menu.view.html"'></div>
         <div ng-view></div>
+        <div ng-include='"frontend/assets/includes/accept_cookies.view.html"'></div>
         <div ng-include='"frontend/assets/includes/footer.view.html"'></div>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
@@ -47,6 +50,7 @@
         <script src="frontend/modules/user/controller/user.controller.js"></script>
         <script src="frontend/modules/contact/controller/contact.controller.js"></script>
         <script src="frontend/modules/main/controller/main.controller.js"></script>     
+        <script src="frontend/modules/admin/controller/admin.controller.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.1.2/ui-bootstrap-tpls.min.js"></script>
         
         <script src="frontend/apiconnector.js"></script>
@@ -63,6 +67,9 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/min/dropzone.min.js"></script>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.css" />
 
+        <script src="frontend/modules/cookies/controller/cookies.controller.js"></script>
+        <script src="frontend/modules/cookies/services/accept_cookies.services.js"></script>
+        <script src="frontend/modules/cookies/services/localstorage_acceptcookies.services.js"></script>
         
 
 	</body>

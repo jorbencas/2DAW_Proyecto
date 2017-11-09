@@ -3,7 +3,7 @@ app.factory('twitterService', function ($q) {
     return {
         initialize: function () {
             //initialize OAuth.io with public key of the application
-            OAuth.initialize('pnKkNT8fUlrGIqUcijgs2rwECRo', {cache: true});
+            OAuth.initialize('FJ8BCOtGotnr4EvaQBXJuzwfFR0', {cache: true});
             //try to create an authorization result when the page loads, this means a returning user won't have to click the twitter button again
             authorizationResult = OAuth.create('twitter');
         },

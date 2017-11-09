@@ -157,13 +157,12 @@ app.controller('signupCtrl', function ($scope, services, $location, $timeout, Co
     $("body").removeClass("modal-open");
 
     $scope.SubmitSignUp = function () {
-        var data = {"usuario": $scope.signup.inputUser, "email": $scope.signup.inputEmail,
-            "password": $scope.signup.inputPass};
+        var data = {"usuario": $scope.signup.inputUser, "nombre": $scope.signup.inputName, "apellidos": $scope.signup.inputSurn, "email": $scope.signup.inputEmail,
+            "password": $scope.signup.inputPass, "password2": $scope.signup.inputPass2, "date_birthday": $scope.signup.inputBirth, "tipo": $scope.signup.inputType,
+            "bank": $scope.signup.inputBank, "dni": $scope.signup.inputDni};
         var data_users_JSON = JSON.stringify(data);
-        
         services.post('user', 'signup_user', data_users_JSON).then(function (response) {
             //console.log(response);
-
             if (response.success) {
                 $timeout(function () {
                     $location.path('/');
@@ -413,7 +412,7 @@ load_pais_prov_poblac, $timeout, cookiesService) {
         'eventHandlers': {
             'sending': function (file, formData, xhr) {},
             'success': function (file, response) {
-                console.log(response);
+                //console.log(response);
                 response = JSON.parse(response);
                 //console.log(response);
                 if (response.resultado) {

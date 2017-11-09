@@ -16,13 +16,13 @@ function enviar_email($arr) {
 
         case 'modificacion':
             $subject = 'Tu Nuevo Password en JoinElderly';
-            $ruta = "<a href='http://".$_SERVER['HTTP_HOST']."/4_AngularJS/3_proj_final_AngularJS/JoinElderly/#/user/cambiarpass/" . $arr['token'] . "'>aqu&iacute;</a>";
+            $ruta = "<a href='http://".$_SERVER['HTTP_HOST']."/2DAW_Proyecto/#/user/cambiarpass/" . $arr['token'] . "'>aqu&iacute;</a>";
             $body = 'Para recordar tu password pulsa ' . $ruta;
             break;
 
         case 'contact':
             $subject = 'Tu Petici&oacute;n a JoinElderly ha sido enviada<br>';
-            $ruta = '<a href="http://'.$_SERVER['HTTP_HOST'].'/4_AngularJS/3_proj_final_AngularJS/JoinElderly/#/"' . '>aqu&iacute;</a>';
+            $ruta = '<a href="http://'.$_SERVER['HTTP_HOST'].'/2DAW_Proyecto/#/"' . '>aqu&iacute;</a>';
             $body = 'Para visitar nuestra web, pulsa ' . $ruta;
             break;
 
