@@ -5,14 +5,14 @@ function validate_userPHP($value) {
             'filter' => FILTER_VALIDATE_REGEXP,
             'options' => array('regexp' => '/^.{4,20}$/')
         ),
-        // 'nombre' => array(
-        //     'filter' => FILTER_VALIDATE_REGEXP,
-        //     'options' => array('regexp' => '/^\D{3,30}$/')
-        // ),
-        // 'apellidos' => array(
-        //     'filter' => FILTER_VALIDATE_REGEXP,
-        //     'options' => array('regexp' => '/^\D{4,120}$/')
-        // ),
+        'nombre' => array(
+            'filter' => FILTER_VALIDATE_REGEXP,
+            'options' => array('regexp' => '/^\D{3,30}$/')
+        ),
+        'apellidos' => array(
+            'filter' => FILTER_VALIDATE_REGEXP,
+            'options' => array('regexp' => '/^\D{4,120}$/')
+        ),
         'email' => array(
             'filter' => FILTER_CALLBACK,
             'options' => 'validatemail'
@@ -20,26 +20,26 @@ function validate_userPHP($value) {
         'password' => array(
             'filter' => FILTER_VALIDATE_REGEXP,
             'options' => array('regexp' => '/^.{4,6}$/')
+        ),
+        'date_birthday' => array(
+            'filter' => FILTER_VALIDATE_REGEXP,
+            'options' => array('regexp' => '/\d{2}.\d{2}.\d{4}$/')
+        ),
+        'bank' => array(
+            'filter' => FILTER_VALIDATE_REGEXP,
+            'options' => array('regexp' => '/^.{4,20}$/')
         )
-        // 'date_birthday' => array(
-        //     'filter' => FILTER_VALIDATE_REGEXP,
-        //     'options' => array('regexp' => '/\d{2}.\d{2}.\d{4}$/')
-        // ),
-        // 'bank' => array(
-        //     'filter' => FILTER_VALIDATE_REGEXP,
-        //     'options' => array('regexp' => '/^.{4,20}$/')
-        // )
     );
 
 
     $resultado = filter_var_array($value, $filtro);
-//     //$resultado['password2'] = $value['password2'];
-//     // $resultado['dni'] = $value['dni'];
-//     // $resultado['tipo'] = $value['tipo'];
+     //$resultado['password2'] = $value['password2'];
+    $resultado['dni'] = $value['dni'];
+    $resultado['tipo'] = $value['tipo'];
      $resultado['avatar'] = $value['avatar'];
-//     // $resultado['pais'] = $value['pais'];
-//     // $resultado['provincia'] = $value['provincia'];
-//     // $resultado['poblacion'] = $value['poblacion'];
+    $resultado['pais'] = $value['pais'];
+    $resultado['provincia'] = $value['provincia'];
+    $resultado['poblacion'] = $value['poblacion'];
     $resultado = validateUsers($resultado);
     return $resultado;
 }
@@ -54,11 +54,11 @@ function validateUsers($resultado) {
         $result['resultado'] = false;
        
      }
-    // elseif (!$resultado['password'] || $resultado['password'] != $resultado['password2']) {
-    //     $result['password'] = 'Password debe tener de 4 a 6 caracteres y las dos contrasenyas deben ser iguales';
-    //     $result['resultado'] = false;
+    elseif (!$resultado['password'] || $resultado['password'] != $resultado['password']) {
+        $result['password'] = 'Password debe tener de 4 a 6 caracteres y las dos contrasenyas deben ser iguales';
+        $result['resultado'] = false;
        
-    // } 
+    } 
      else {
         $result['resultado'] = true;
         $result['datos']=$resultado;

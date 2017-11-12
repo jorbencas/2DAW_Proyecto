@@ -112,7 +112,7 @@ app.config(['$routeProvider',
 app.config([
 'FacebookProvider',
 function (FacebookProvider) {
-var myAppId = '1737270923197068';
+var myAppId = '1966350516968911';
 FacebookProvider.init(myAppId);
 }
 ]);

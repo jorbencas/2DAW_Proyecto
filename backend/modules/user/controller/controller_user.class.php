@@ -184,6 +184,8 @@ class controller_user {
                             'token' => $token,
                             'email' => $_POST['inputEmail']
                         );
+                       // echo json_encode($arrArgument );
+                        //die();
                         if (sendtoken($arrArgument, "modificacion"))
                             echo "true|Tu mensaje ha sido enviado correctamente ";
                         else
@@ -563,8 +565,8 @@ class controller_user {
         $user = $_POST;
         if ($user['twitter']) {
             $user['apellidos'] = "";
-            $user['email'] = "";
-            // $mail = $user['user_id'] . "@gmail.com";
+            //$user['email'] = "";
+            //$mail = $user['user_id'] . "@gmail.com";
         }
         set_error_handler('ErrorHandler');
         try {
