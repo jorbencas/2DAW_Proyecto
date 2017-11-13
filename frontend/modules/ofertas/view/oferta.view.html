@@ -4,7 +4,14 @@
 <div id="contenido" class="row">
     <br>
     <div class="off_izq">
+        <div class="contentof">
         <div class="title"><h2>Oferta</h2></div>
+
+        <div class="imageof">
+                <div class="control-group">
+                   <img src="{{data.picture}}" alt="" width="100%" height="100%">
+                </div>
+            </div>
         <div class="control-group">
             Nombre del componente: {{data.name}}
         </div>
@@ -29,9 +36,8 @@
         <div class="control-group">
             Descripción: {{data.description}}
         </div>
-        <div class="control-group">
-           <img src="{{data.picture}}" alt="" width="25%" height="25%">
-        </div>
+       
+    </div>
         <div id='ubicacion'></div>
         <!-- Se escribe un mapa con la localizacion anterior-->
         <div id="demo">{{demo}}</div>

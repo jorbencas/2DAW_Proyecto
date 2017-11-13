@@ -6,26 +6,12 @@ app.controller('ofertasCtrl', function ($scope, ofertas) {
     $scope.maxSize = 5;
     $scope.currentPage = 1;
 
-    $scope.$watch('currentPage + numPerPage', update);
-    
-    
-
-    function update() {
-        var begin = (($scope.currentPage -1) * $scope.numPerPage), end = begin + $scope.numPerPage;
-        console.log(begin);
-        console.log(end);
-       //$scope.filteredOfertas = $scope.oferta;
-        $scope.filteredOfertas = $scope.oferta.slice(begin, end);
-    }
-
-    
-      
-    //   $scope.$watch('currentPage + numPerPage', function() {
-    //     var begin = (($scope.currentPage - 1) * $scope.numPerPage)
-    //     , end = begin + $scope.numPerPage;
-        
-    //     $scope.filteredTodos = $scope.todos.slice(begin, end);
-    //   });
+    $scope.filteredOfertas = $scope.oferta.slice(0, 3);
+        $scope.pageChanged = function() {
+            var startPos = ($scope.currentPage - 1) * 3;
+            $scope.filteredOfertas = $scope.oferta.slice(startPos, startPos + 3);
+            console.log($scope.currentPage);
+          };
 
 });
 
